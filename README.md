@@ -24,35 +24,35 @@ All of the Mocha command line options are supported, plus some extras.
 The list of test files to run can be specified using either the standard Grunt format or by using the `files` option. If neither is specified, the Mocha default will be used (`test/*.js`).
 
 #### Mocha Options ####
- * `invert` (boolean) - inverts `grep` matches.
- * `colors` (boolean) - force enabling of colors.
- * `no-colors` (boolean) - force disabling of colors.
- * `growl` (boolean) - enable growl notification support.
- * `debug` (boolean) - enable node's debugger, synonym for node --debug.
- * `bail` (boolean) - bail after first test failure.
- * `recursive` (boolean) - include sub directories.
- * `debug-brk` (boolean) - enable node's debugger breaking on the first line.
- * `ignore-leaks` (boolean) - ignore global variable leaks.
- * `reporter` (string) - specify the reporter to use.
- * `ui` (string) - specify user-interface (bdd|tdd|exports).
- * `grep` (string) - only run tests matching pattern.
- * `timeout` (string) - set test-case timeout in milliseconds [2000].
- * `slow` (string) - "slow" test threshold in milliseconds [75].
- * `globals` (array) - allow the given comma-delimited global names.
- * `compilers` (array) - use the given module(s) to compile files.
+* `invert` (boolean) - inverts `grep` matches.
+* `colors` (boolean) - force enabling of colors.
+* `no-colors` (boolean) - force disabling of colors.
+* `growl` (boolean) - enable growl notification support.
+* `debug` (boolean) - enable node's debugger, synonym for node --debug.
+* `bail` (boolean) - bail after first test failure.
+* `recursive` (boolean) - include sub directories.
+* `debug-brk` (boolean) - enable node's debugger breaking on the first line.
+* `ignore-leaks` (boolean) - ignore global variable leaks.
+* `reporter` (string) - specify the reporter to use.
+* `ui` (string) - specify user-interface (bdd|tdd|exports).
+* `grep` (string) - only run tests matching pattern.
+* `timeout` (string) - set test-case timeout in milliseconds [2000].
+* `slow` (string) - "slow" test threshold in milliseconds [75].
+* `globals` (array) - allow the given comma-delimited global names.
+* `compilers` (array) - use the given module(s) to compile files.
 
 #### Coverage Options ####
- * `coverage` (boolean) - instrument the source using blanket. This will automaticaly be enabled if you configure `coveralls`.
+* `coverage` (boolean) - instrument the source using blanket. This will automaticaly be enabled if you configure `coveralls`.
 
 #### Coveralls Options ####
- * `coveralls` (Object) - indicate you wish to instrament your test and send coverage reports to coveralls.io
- ** `serviceName` (string) - name of the CI service for coveralls to integrate with (ie: travis-pro).
- ** `serviceJobId` (string) - The job id used by coveralls (default: process.env.TRAVIS_JOB_ID).
- ** `repoToken` (string) - repository identifier as provided by coveralls.
+* `coveralls` (Object) - indicate you wish to instrament your test and send coverage reports to coveralls.io
+  * `serviceName` (string) - name of the CI service for coveralls to integrate with (ie: travis-pro).
+  * `serviceJobId` (string) - The job id used by coveralls (default: process.env.TRAVIS_JOB_ID).
+  * `repoToken` (string) - repository identifier as provided by coveralls.
 
 #### Extras ####
- * `quiet` (boolean) - disable printing of Mocha's output to the terminal.
- * `files` (string|array) - glob(s) of test files to run.
+* `quiet` (boolean) - disable printing of Mocha's output to the terminal.
+* `files` (string|array) - glob(s) of test files to run.
 
 
 ### Examples ###
