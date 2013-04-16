@@ -138,5 +138,5 @@ Copyright © 2013 Mike Moulton
 [Coveralls]: https://coveralls.io
 [Getting Started]: http://gruntjs.com/getting-started
 [grunt-mocha-cli]: https://github.com/Rowno/grunt-mocha-cli
-[travis]: http://travis-ci.org/mmoulton/grunt-mocha-coveralls
-[travis-image]: https://secure.travis-ci.org/mmoulton/grunt-mocha-coveralls.png?branch=master
+[travis]: http://travis-ci.org/mmoulton/grunt-mocha-cov
+[travis-image]: https://secure.travis-ci.org/mmoulton/grunt-mocha-cov.png?branch=master
