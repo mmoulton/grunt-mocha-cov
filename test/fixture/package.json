@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "blanket": {
+      "pattern": [
+        "test/fixture/pass"
+      ]
+    }
+  }
+}
