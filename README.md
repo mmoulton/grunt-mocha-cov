@@ -93,6 +93,20 @@ grunt.initConfig({
 grunt.registerTask('test', ['mochacov']);
 ```
 
+For this to work properly you will also need to inform [Blanket][] about what needs to be instrumented. The best way to do so is adding a block to your `package.json` such as:
+
+```json
+"scripts": {
+  "blanket": {
+    "pattern": [
+      "src"
+    ]
+  }
+}
+```
+This would instrument any .js files found under `src`.
+
+
 #### Coveralls.io Integration with Travis CI ####
 
 It's easy to send coverage data to coveralls.io from Travis CI. Simply provided the `coveralls` option with relavent params and that's it:
@@ -122,7 +136,6 @@ grunt.initConfig({
 grunt.registerTask('travis', ['mochacov:coverage']);
 grunt.registerTask('test', ['mochacov:test']);
 ```
-
 
 License
 -------
