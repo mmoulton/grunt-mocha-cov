@@ -27,6 +27,18 @@ exports['grunt fail'] = function (test) {
   });
 };
 
+exports['grunt fail missing repo_token or service_job_id + service_name'] = function (test) {
+  test.expect(1);
+
+  grunt.util.spawn({
+    cmd: 'grunt',
+    args: ['--gruntfile', __dirname + '/fixture/fail-gruntfile2.js']
+  }, function (error, output, code) {
+    test.notStrictEqual(code, 0, 'grunt should fail');
+    test.done();
+  });
+};
+
 exports['grunt glob'] = function (test) {
   test.expect(2);
 
