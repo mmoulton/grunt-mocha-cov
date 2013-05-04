@@ -1,6 +1,8 @@
 'use strict';
 
-var grunt = require('grunt');
+var grunt = require('grunt'),
+    path = require('path'),
+    fs = require('fs');
 
 
 exports['grunt pass'] = function (test) {
@@ -71,6 +73,21 @@ exports['grunt coverage'] = function (test) {
     args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile.js']
   }, function (error, output, code) {
     test.notStrictEqual(output.stdout.indexOf('"coverage": 100'), -1, 'coverage should be 100 percent');
+    test.strictEqual(code, 0, 'grunt should pass');
+    test.done();
+  });
+};
+
+exports['grunt coverage output'] = function (test) {
+  test.expect(2);
+  grunt.util.spawn({
+    cmd: 'grunt',
+    args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile-out.js']
+  }, function (error, output, code) {
+    var filename = path.resolve('test/fixture/out.json');
+    var jsonOutput = fs.readFileSync(filename);
+    fs.unlinkSync(filename);
+    test.notStrictEqual(jsonOutput.coverage, 100, 'coverage should be 100 percent');
     test.strictEqual(code, 0, 'grunt should pass');
     test.done();
   });
