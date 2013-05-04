@@ -18,3 +18,7 @@
 
 * Fixed regressions introduced in 0.0.4 where the coveralls REST API requires the repo_token for all request (resolved #5)
 * Fixed the on disk locating of mocha. Caused failures when mocha was a dependency of a project including this library. (resolved #4)
+
+### 0.0.6 (May 4, 2013)
+
+* Adding ability to save report output to disk using `output` option
