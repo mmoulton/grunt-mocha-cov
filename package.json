@@ -1,7 +1,7 @@
 {
   "name": "grunt-mocha-cov",
   "description": "Run Mocha server-side tests in Grunt with code coverage support and optional integration to coveralls.io.",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "author": "Mike Moulton <mike@meltmedia.com> (http://meltmedia.com)",
   "contributors": [
     "Gregg Caines <gregg@caines.ca> (https://github.com/cainus/node-coveralls)",
