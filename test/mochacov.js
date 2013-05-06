@@ -2,93 +2,112 @@
 
 var grunt = require('grunt'),
     path = require('path'),
-    fs = require('fs');
+    fs = require('fs'),
+    chai = require('chai'),
+    should = chai.should();
 
+describe('Integration Tests', function () {
 
-exports['grunt pass'] = function (test) {
-  test.expect(1);
+  it('should test grunt passing', function (done) {
 
-  grunt.util.spawn({
-    cmd: 'grunt',
-    args: ['--gruntfile', __dirname + '/fixture/pass-gruntfile.js']
-  }, function (error, output, code) {
-    test.strictEqual(code, 0, 'grunt should pass');
-    test.done();
+    grunt.util.spawn({
+      cmd: 'grunt',
+      args: ['--gruntfile', __dirname + '/fixture/pass-gruntfile.js']
+    }, function (error, output, code) {
+      should.not.exist(error);
+      code.should.equals(0);
+      done();
+    });
   });
-};
 
-exports['grunt fail'] = function (test) {
-  test.expect(1);
+  it('should test when grunt fails', function (done) {
 
-  grunt.util.spawn({
-    cmd: 'grunt',
-    args: ['--gruntfile', __dirname + '/fixture/fail-gruntfile.js']
-  }, function (error, output, code) {
-    test.notStrictEqual(code, 0, 'grunt should fail');
-    test.done();
+    grunt.util.spawn({
+      cmd: 'grunt',
+      args: ['--gruntfile', __dirname + '/fixture/fail-gruntfile.js']
+    }, function (error, output, code) {
+      code.should.not.equals(0);
+      done();
+    });
   });
-};
 
-exports['grunt fail missing repo_token or service_job_id + service_name'] = function (test) {
-  test.expect(1);
+  it('should test missing repo_token or service_job_id + service_name', function (done) {
 
-  grunt.util.spawn({
-    cmd: 'grunt',
-    args: ['--gruntfile', __dirname + '/fixture/fail-gruntfile2.js']
-  }, function (error, output, code) {
-    test.notStrictEqual(code, 0, 'grunt should fail');
-    test.done();
+    grunt.util.spawn({
+      cmd: 'grunt',
+      args: ['--gruntfile', __dirname + '/fixture/fail-gruntfile2.js']
+    }, function (error, output, code) {
+      code.should.not.equals(0);
+      done();
+    });
   });
-};
 
-exports['grunt glob'] = function (test) {
-  test.expect(2);
+  it('should test grunt file glob', function (done) {
 
-  grunt.util.spawn({
-    cmd: 'grunt',
-    args: ['--gruntfile', __dirname + '/fixture/glob-gruntfile.js']
-  }, function (error, output, code) {
-    test.notStrictEqual(output.stdout.indexOf('2 tests complete'), -1, 'should run 2 tests');
-    test.strictEqual(code, 0, 'grunt should pass');
-    test.done();
+    grunt.util.spawn({
+      cmd: 'grunt',
+      args: ['--gruntfile', __dirname + '/fixture/glob-gruntfile.js']
+    }, function (error, output, code) {
+      should.not.exist(error);
+      code.should.equals(0);
+      output.stdout.should.include('2 tests complete');
+      done();
+    });
   });
-};
 
-exports['grunt options'] = function (test) {
-  test.expect(1);
+  it('should test grunt options', function (done) {
 
-  grunt.util.spawn({
-    cmd: 'grunt',
-    args: ['--gruntfile', __dirname + '/fixture/options-gruntfile.js']
-  }, function (error, output, code) {
-    test.strictEqual(code, 0, 'grunt should pass');
-    test.done();
+    grunt.util.spawn({
+      cmd: 'grunt',
+      args: ['--gruntfile', __dirname + '/fixture/options-gruntfile.js']
+    }, function (error, output, code) {
+      should.not.exist(error);
+      code.should.equals(0);
+      done();
+    });
   });
-};
 
-exports['grunt coverage'] = function (test) {
-  test.expect(2);
-  grunt.util.spawn({
-    cmd: 'grunt',
-    args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile.js']
-  }, function (error, output, code) {
-    test.notStrictEqual(output.stdout.indexOf('"coverage": 100'), -1, 'coverage should be 100 percent');
-    test.strictEqual(code, 0, 'grunt should pass');
-    test.done();
-  });
-};
+  it('should test grunt coverage', function (done) {
 
-exports['grunt coverage output'] = function (test) {
-  test.expect(2);
-  grunt.util.spawn({
-    cmd: 'grunt',
-    args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile-out.js']
-  }, function (error, output, code) {
-    var filename = path.resolve('test/fixture/out.json');
-    var jsonOutput = fs.readFileSync(filename);
-    fs.unlinkSync(filename);
-    test.notStrictEqual(jsonOutput.coverage, 100, 'coverage should be 100 percent');
-    test.strictEqual(code, 0, 'grunt should pass');
-    test.done();
+    grunt.util.spawn({
+      cmd: 'grunt',
+      args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile.js']
+    }, function (error, output, code) {
+      should.not.exist(error);
+      code.should.equals(0);
+      output.stdout.should.include('"coverage": 100');
+      done();
+    });
   });
-};
+
+  it('should test grunt coverage output', function (done) {
+
+    grunt.util.spawn({
+      cmd: 'grunt',
+      args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile-out.js']
+    }, function (error, output, code) {
+      should.not.exist(error);
+      code.should.equals(0);
+
+      var filename = path.resolve('test/fixture/out.json');
+      var jsonOutput = JSON.parse(fs.readFileSync(filename));
+      fs.unlinkSync(filename);
+      jsonOutput.coverage.should.equals(100);
+      done();
+    });
+  });
+
+  it('should test grunt coverage to coveralls', function (done) {
+
+    grunt.util.spawn({
+      cmd: 'grunt',
+      args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile-coveralls.js']
+    }, function (error, output, code) {
+//      console.log(error.stack);
+      should.exist(error);
+      code.should.not.equals(0);
+      done();
+    });
+  });
+
+});
