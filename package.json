@@ -44,14 +44,17 @@
     "grunt": "0.4.x",
     "grunt-cli": "~0.1.6",
     "grunt-contrib-jshint": "0.4.x",
-    "grunt-contrib-nodeunit": "0.1.x",
     "coffee-script": "1.6.x",
-    "should": "1.2.x"
+    "chai": "1.2.x",
+    "should": "*",
+    "mocha-term-cov-reporter": "*"
   },
   "scripts": {
     "test": "./node_modules/.bin/grunt test",
     "blanket": {
       "pattern": [
+        "grunt-mocha-cov/lib",
+        "grunt-mocha-cov/tasks",
         "test/fixture/pass"
       ]
     }
