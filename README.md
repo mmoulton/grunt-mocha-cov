@@ -1,4 +1,4 @@
-# Grunt Mocha Test Coverage [![Build Status][travis-image]][travis]
+# Grunt Mocha Test Coverage [![Build Status][travis-image]][travis] [![Coverage Status][coveralls-image]][coveralls]
 
 Use [Grunt][] to execute server-side [Mocha][] tests with optional code coverage using [Blanket][]. You can also use this to send coverage data to [Coveralls][].
 
@@ -118,9 +118,8 @@ grunt.initConfig({
     coverage: {
       options: {
         coveralls: {
-          serviceName: 'travis-pro',
-          repoToken: '<your-coveralls-token-here>'
-        },
+          serviceName: 'travis-ci'
+        }
       }
     },
     test: {
@@ -154,3 +153,5 @@ Copyright © 2013 Mike Moulton
 [grunt-mocha-cli]: https://github.com/Rowno/grunt-mocha-cli
 [travis]: http://travis-ci.org/mmoulton/grunt-mocha-cov
 [travis-image]: https://secure.travis-ci.org/mmoulton/grunt-mocha-cov.png?branch=master
+[coveralls]: https://coveralls.io/r/mmoulton/grunt-mocha-cov
+[coveralls-image]: https://coveralls.io/repos/mmoulton/grunt-mocha-cov/badge.png?branch=master
