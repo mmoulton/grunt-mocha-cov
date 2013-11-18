@@ -31,23 +31,23 @@
     "node": "0.10.x || 0.8.x"
   },
   "dependencies": {
-    "mocha": "*",
-    "blanket": "*",
-    "lcov-parse": "*",
-    "request": "*",
-    "mocha-lcov-reporter": "*"
+    "mocha": "1.14.0",
+    "blanket": "1.1.5",
+    "lcov-parse": "0.0.5",
+    "request": "2.27.0",
+    "mocha-lcov-reporter": "0.0.1"
   },
   "peerDependencies": {
-    "grunt": "*"
+    "grunt": "0.4.1"
   },
   "devDependencies": {
-    "grunt": "*",
-    "grunt-cli": "*",
-    "grunt-contrib-jshint": "*",
-    "coffee-script": "*",
-    "chai": "*",
-    "should": "*",
-    "mocha-term-cov-reporter": "*"
+    "grunt": "0.4.1",
+    "grunt-cli": "0.1.11",
+    "grunt-contrib-jshint": "0.7.2",
+    "coffee-script": "1.6.3",
+    "chai": "1.8.1",
+    "should": "2.1.0",
+    "mocha-term-cov-reporter": "0.1.5"
   },
   "scripts": {
     "test": "./node_modules/.bin/grunt test",
