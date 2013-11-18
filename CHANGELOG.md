@@ -28,3 +28,9 @@
 * Updated test suite to use this plugin (resolved #10)
 * Bug in regex for coveralls service name. (resolved #9)
 * More robust handling of coveralls.io API options (resolved #8)
+
+### 0.1.0 (Nov 18, 2013)
+
+* Updating all dependencies, this includes:
+  * mocha 0.14.x
+  * blanket 1.1.5
