@@ -50,7 +50,7 @@ describe('Integration Tests', function () {
     }, function (error, output, code) {
       should.not.exist(error);
       code.should.equals(0);
-      output.stdout.should.include('2 tests complete');
+      output.stdout.should.include('2 passing');
       done();
     });
   });

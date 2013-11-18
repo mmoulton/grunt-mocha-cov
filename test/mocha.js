@@ -16,7 +16,7 @@ describe('Unit Tests', function () {
       quiet: true
     }, function (error, output) {
       should.not.exist(error);
-      output.should.include('1 test complete');
+      output.should.include('1 passing');
       done();
     });
   });
