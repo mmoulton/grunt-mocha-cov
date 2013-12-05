@@ -29,8 +29,9 @@
 * Bug in regex for coveralls service name. (resolved #9)
 * More robust handling of coveralls.io API options (resolved #8)
 
-### 0.1.0 (Nov 18, 2013)
+### 0.1.0 (Dec 5, 2013)
 
 * Updating all dependencies, this includes:
   * mocha 0.14.x
   * blanket 1.1.5
+* Changed search location for `mocha` (resolved #17)
