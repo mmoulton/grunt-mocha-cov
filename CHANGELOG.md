@@ -35,3 +35,7 @@
   * mocha 0.14.x
   * blanket 1.1.5
 * Changed search location for `mocha` (resolved #17)
+
+### 0.1.1 (Dec 6, 2013)
+
+* Will now create any missing directories when writing output to a file (resolved #19)

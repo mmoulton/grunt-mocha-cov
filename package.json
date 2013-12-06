@@ -1,7 +1,7 @@
 {
   "name": "grunt-mocha-cov",
   "description": "Run Mocha server-side tests in Grunt with code coverage support and optional integration to coveralls.io.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Mike Moulton <mike@meltmedia.com> (http://meltmedia.com)",
   "contributors": [
     "Gregg Caines <gregg@caines.ca> (https://github.com/cainus/node-coveralls)",
@@ -35,7 +35,8 @@
     "blanket": "1.1.5",
     "lcov-parse": "0.0.5",
     "request": "2.27.0",
-    "mocha-lcov-reporter": "0.0.1"
+    "mocha-lcov-reporter": "0.0.1",
+    "mkdirp": "0.3.5"
   },
   "peerDependencies": {
     "grunt": "0.4.x"

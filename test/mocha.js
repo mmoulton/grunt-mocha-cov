@@ -143,6 +143,25 @@ describe('Unit Tests', function () {
     });
   });
 
+  it('should test coverage output when directory does not exist', function (done) {
+
+    mocha({
+      files: [__dirname + '/fixture/pass.js'],
+      quiet: true,
+      reporter: 'json-cov',
+      output: 'test/new/out.json'
+    }, function (error) {
+      should.not.exist(error);
+      var filename = path.resolve('test/new/out.json'),
+          dir = path.dirname(filename);
+      var jsonOutput = JSON.parse(fs.readFileSync(filename));
+      fs.unlinkSync(filename);
+      fs.rmdirSync(dir);
+      jsonOutput.coverage.should.equals(100);
+      done();
+    });
+  });
+
   it('should test coveralls integration', function (done) {
 
     mocha({
