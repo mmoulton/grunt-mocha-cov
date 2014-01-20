@@ -45,7 +45,7 @@ The list of test files to run can be specified using either the standard Grunt f
 * `coverage` (boolean) - instrument the source using blanket. This will automaticaly be enabled if you configure `coveralls`.
 
 #### Coveralls Options ####
-* `coveralls` (Object) - indicate you wish to instrament your test and send coverage reports to coveralls.io
+* `coveralls` (Object) - indicate you wish to instrument your test and send coverage reports to coveralls.io
   * `serviceName` (string) - name of the CI service for coveralls to integrate with (ie: travis-pro).
   * `serviceJobId` (string) - The job id used by coveralls (default: process.env.TRAVIS_JOB_ID).
   * `repoToken` (string) - repository identifier as provided by coveralls.
@@ -78,7 +78,7 @@ grunt.registerTask('test', ['mochacov']);
 
 #### Built in HTML Coverage Report ####
 
-If you use one of the built in built in coverage reports your code will automaticaly be instrumented by blanket:
+If you use one of the built in coverage reports your code will automaticaly be instrumented by blanket:
 
 ```javascript
 grunt.initConfig({
