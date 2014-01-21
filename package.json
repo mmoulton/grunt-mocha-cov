@@ -28,7 +28,7 @@
     "url": "https://github.com/mmoulton/grunt-mocha-cov/issues"
   },
   "engines": {
-    "node" : ">= 0.10.0"
+    "node": ">= 0.10.0"
   },
   "dependencies": {
     "mocha": "1.14.0",
@@ -36,7 +36,9 @@
     "lcov-parse": "0.0.5",
     "request": "2.27.0",
     "mocha-lcov-reporter": "0.0.1",
-    "mkdirp": "0.3.5"
+    "mkdirp": "0.3.5",
+    "coveralls": "~2.6.1",
+    "lodash.defaults": "~2.4.1"
   },
   "peerDependencies": {
     "grunt": "0.4.x"

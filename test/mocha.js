@@ -163,7 +163,6 @@ describe('Unit Tests', function () {
   });
 
   it('should test coveralls integration', function (done) {
-
     mocha({
       files: [__dirname + '/fixture/pass.js'],
       coveralls: {
@@ -174,6 +173,38 @@ describe('Unit Tests', function () {
     }, function (error) {
       // expect a bad response as we intentionaly give coveralls a bad token
       should.exist(error);
+      done();
+    });
+  });
+
+  it('should accept a boolean for coveralls option', function () {
+    var opts = mocha.getBaseOptions({
+      coveralls: true
+    });
+
+    opts.coveralls.should.be.a('object');
+  });
+
+  it('should accept a string for require and make it an array', function () {
+    var opts = mocha.getBaseOptions({
+      require: 'module'
+    });
+
+    opts.require.should.eql([
+      'module'
+    ]);
+  });
+
+  it('should require that either a supported ci is in use, a repoToken is specified, or a serviceJobId and serviceName are specified', function (done) {
+    mocha({
+      files: [__dirname + '/fixture/pass.js'],
+      coveralls: {
+        repoToken: null,
+        serviceName: null,
+        serviceJobId: null
+      }
+    }, function (err) {
+      err.message.should.match(/(.*(repoToken|serviceName|serviceJobId).*){3}/);
       done();
     });
   });

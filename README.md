@@ -42,13 +42,13 @@ The list of test files to run can be specified using either the standard Grunt f
 * `compilers` (array) - use the given module(s) to compile files.
 
 #### Coverage Options ####
-* `coverage` (boolean) - instrument the source using blanket. This will automaticaly be enabled if you configure `coveralls`.
+* `instrument` (boolean) - instrument the source using blanket. Defaults to true when you setup `coveralls`, or use specify a `*-cov` reporter, otherwise false.
 
 #### Coveralls Options ####
-* `coveralls` (Object) - indicate you wish to instrument your test and send coverage reports to coveralls.io
-  * `serviceName` (string) - name of the CI service for coveralls to integrate with (ie: travis-pro).
-  * `serviceJobId` (string) - The job id used by coveralls (default: process.env.TRAVIS_JOB_ID).
-  * `repoToken` (string) - repository identifier as provided by coveralls.
+* `coveralls` (Boolean|Object) - Indicate you wish to send a coverage report to coveralls.io. ***Generally*** you can get away with seting this to `true` and letting [node-coveralls](https://github.com/cainus/node-coveralls) pick the necessary values out of the environment.
+  * `serviceName` (string) - name of the CI service for coveralls to integrate with (options are `travis-ci`, `jenkins`, `circleci`, or `codeship`).
+  * `serviceJobId` (string) - The job id used by coveralls (default based on service).
+  * `repoToken` (string) - repository identifier as provided by coveralls (defaults to the `COVERALLS_REPO_TOKEN` environment variable).
 
 #### Extras ####
 * `quiet` (boolean) - disable printing of Mocha's output to the terminal.
@@ -107,19 +107,16 @@ For this to work properly you will also need to inform [Blanket][] about what ne
 ```
 This would instrument any .js files found under `src`.
 
-
 #### Coveralls.io Integration with Travis CI ####
 
-It's easy to send coverage data to coveralls.io from Travis CI. Simply provided the `coveralls` option with relavent params and that's it:
+It's easy to send coverage data to coveralls.io from the most popular CI serivces (like Travis CI). Simply set the `coveralls` option to true:
 
 ```javascript
 grunt.initConfig({
   mochacov: {
     coverage: {
       options: {
-        coveralls: {
-          serviceName: 'travis-ci'
-        }
+        coveralls: true
       }
     },
     test: {
@@ -135,6 +132,41 @@ grunt.initConfig({
 
 grunt.registerTask('travis', ['mochacov:coverage']);
 grunt.registerTask('test', ['mochacov:test']);
+```
+
+#### Keep your Coveralls repo token out of the environment ####
+
+Don't want to keep your repo token in the environment where anyone could access it? Pass it in via the `coveralls.repoToken` option:
+
+```js
+grunt.initConfig({
+  mochacov: {
+    options: {
+      coveralls: {
+        repoToken: 'YOURREPOTOKEN'
+      }
+    },
+    coverage: ['test/*.js']
+  }
+})
+```
+
+#### Setup intrumentation yourself ####
+
+If you want to start blanket yourself, as in [this example](https://github.com/alex-seville/blanket/blob/master/docs/intermediate_node.md), just set the `instrument` option to false.
+
+```javascript
+grunt.initConfig({
+  mochacov: {
+    options: {
+      coveralls: true,
+      instrument: false
+    },
+    all: ['test/*.js']
+  }
+});
+
+grunt.registerTask('json_coverage', ['mochacov']);
 ```
 
 License
