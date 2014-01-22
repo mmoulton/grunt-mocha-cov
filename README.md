@@ -97,7 +97,7 @@ grunt.registerTask('test', ['mochacov']);
 For this to work properly you will also need to inform [Blanket][] about what needs to be instrumented. The best way to do so is adding a block to your `package.json` such as:
 
 ```json
-"scripts": {
+"config": {
   "blanket": {
     "pattern": [
       "src"
