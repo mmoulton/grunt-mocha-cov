@@ -39,3 +39,8 @@
 ### 0.1.1 (Dec 6, 2013)
 
 * Will now create any missing directories when writing output to a file (resolved #19)
+
+### 0.2.0 (Jan 22, 2014)
+
+* Switched to official `node-coveralls` module for interfacing with coveralls.io.
+  Special thanks to @spenceralger for the pull request. (resolved #25)
