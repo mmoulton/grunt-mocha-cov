@@ -3,3 +3,5 @@ lib/coveralls.js:
 
 lib/mocha.js, tasks/mocha-coveralls.js:
   based on original works by Roland Warmerdam Copyright (c) 2013
+
+Spencer Alger <spencer@spenceralger.com>
