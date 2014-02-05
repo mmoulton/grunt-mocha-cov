@@ -32,26 +32,27 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "mocha": "*",
     "blanket": "*",
-    "lcov-parse": "*",
-    "request": "*",
-    "mocha-lcov-reporter": "*",
-    "mkdirp": "*",
     "coveralls": "*",
-    "lodash.defaults": "*"
+    "lcov-parse": "*",
+    "lodash.defaults": "*",
+    "mkdirp": "*",
+    "mocha": "*",
+    "mocha-lcov-reporter": "*",
+    "optimist": "*",
+    "request": "*"
   },
   "peerDependencies": {
     "grunt": "*"
   },
   "devDependencies": {
+    "chai": "*",
+    "coffee-script": "*",
     "grunt": "*",
     "grunt-cli": "*",
     "grunt-contrib-jshint": "*",
-    "coffee-script": "*",
-    "chai": "*",
-    "should": "*",
-    "mocha-term-cov-reporter": "*"
+    "mocha-term-cov-reporter": "*",
+    "should": "*"
   },
   "scripts": {
     "test": "./node_modules/.bin/grunt test"

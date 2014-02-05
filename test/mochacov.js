@@ -110,4 +110,17 @@ describe('Integration Tests', function () {
     });
   });
 
+  it('should test passing grunt CLI options to mocha', function (done) {
+
+    grunt.util.spawn({
+      cmd: 'grunt',
+      args: ['--gruntfile', __dirname + '/fixture/cli-options-gruntfile.js', '--grep=cli-options-gruntfile']
+    }, function (error, output, code) {
+      should.not.exist(error);
+      code.should.equals(0);
+      output.toString().should.contain('1 passing');
+      done();
+    });
+  });
+
 });

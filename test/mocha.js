@@ -93,7 +93,7 @@ describe('Unit Tests', function () {
     }, function (error, output) {
       should.not.exist(error);
       output = JSON.parse(output);
-      output.stats.passes.should.equal(1);
+      output.stats.passes.should.equal(2);
       done();
     });
   });
