@@ -3,12 +3,13 @@
   "version": "0.2.0",
   "dependencies": {
     "mocha": {
-      "version": "1.17.0",
+      "version": "1.17.1",
       "from": "mocha@*",
       "dependencies": {
         "commander": {
           "version": "2.0.0",
-          "from": "commander@2.0.0"
+          "from": "commander@2.0.0",
+          "resolved": "https://registry.npmjs.org/commander/-/commander-2.0.0.tgz"
         },
         "growl": {
           "version": "1.7.0",
@@ -72,7 +73,7 @@
       "dependencies": {
         "esprima": {
           "version": "1.0.4",
-          "from": "esprima@~1.0.2"
+          "from": "esprima@~ 1.0.2"
         },
         "falafel": {
           "version": "0.1.6",
@@ -92,13 +93,11 @@
     },
     "lcov-parse": {
       "version": "0.0.6",
-      "from": "lcov-parse@*",
-      "resolved": "https://registry.npmjs.org/lcov-parse/-/lcov-parse-0.0.6.tgz"
+      "from": "lcov-parse@*"
     },
     "request": {
       "version": "2.33.0",
       "from": "request@*",
-      "resolved": "https://registry.npmjs.org/request/-/request-2.33.0.tgz",
       "dependencies": {
         "qs": {
           "version": "0.6.6",
@@ -109,8 +108,9 @@
           "from": "json-stringify-safe@~5.0.0"
         },
         "forever-agent": {
-          "version": "0.5.0",
-          "from": "forever-agent@~0.5.0"
+          "version": "0.5.2",
+          "from": "forever-agent@~0.5.0",
+          "resolved": "https://registry.npmjs.org/forever-agent/-/forever-agent-0.5.2.tgz"
         },
         "node-uuid": {
           "version": "1.4.1",
@@ -123,7 +123,6 @@
         "tough-cookie": {
           "version": "0.12.1",
           "from": "tough-cookie@>=0.12.0",
-          "resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-0.12.1.tgz",
           "dependencies": {
             "punycode": {
               "version": "1.2.3",
@@ -146,7 +145,7 @@
               }
             },
             "async": {
-              "version": "0.2.9",
+              "version": "0.2.10",
               "from": "async@~0.2.9"
             }
           }
@@ -214,8 +213,9 @@
       "from": "mkdirp@*"
     },
     "coveralls": {
-      "version": "2.6.1",
+      "version": "2.7.1",
       "from": "coveralls@*",
+      "resolved": "https://registry.npmjs.org/coveralls/-/coveralls-2.7.1.tgz",
       "dependencies": {
         "yaml": {
           "version": "0.2.3",
@@ -242,7 +242,7 @@
                   }
                 },
                 "async": {
-                  "version": "0.2.9",
+                  "version": "0.2.10",
                   "from": "async@~0.2.7"
                 }
               }
@@ -322,34 +322,28 @@
     "lodash.defaults": {
       "version": "2.4.1",
       "from": "lodash.defaults@*",
-      "resolved": "https://registry.npmjs.org/lodash.defaults/-/lodash.defaults-2.4.1.tgz",
       "dependencies": {
         "lodash.keys": {
           "version": "2.4.1",
           "from": "lodash.keys@~2.4.1",
-          "resolved": "https://registry.npmjs.org/lodash.keys/-/lodash.keys-2.4.1.tgz",
           "dependencies": {
             "lodash._isnative": {
               "version": "2.4.1",
-              "from": "lodash._isnative@~2.4.1",
-              "resolved": "https://registry.npmjs.org/lodash._isnative/-/lodash._isnative-2.4.1.tgz"
+              "from": "lodash._isnative@~2.4.1"
             },
             "lodash.isobject": {
               "version": "2.4.1",
-              "from": "lodash.isobject@~2.4.1",
-              "resolved": "https://registry.npmjs.org/lodash.isobject/-/lodash.isobject-2.4.1.tgz"
+              "from": "lodash.isobject@~2.4.1"
             },
             "lodash._shimkeys": {
               "version": "2.4.1",
-              "from": "lodash._shimkeys@~2.4.1",
-              "resolved": "https://registry.npmjs.org/lodash._shimkeys/-/lodash._shimkeys-2.4.1.tgz"
+              "from": "lodash._shimkeys@~2.4.1"
             }
           }
         },
         "lodash._objecttypes": {
           "version": "2.4.1",
-          "from": "lodash._objecttypes@~2.4.1",
-          "resolved": "https://registry.npmjs.org/lodash._objecttypes/-/lodash._objecttypes-2.4.1.tgz"
+          "from": "lodash._objecttypes@~2.4.1"
         }
       }
     }

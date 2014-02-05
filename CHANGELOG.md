@@ -45,3 +45,8 @@
 * Switched to official `node-coveralls` module for interfacing with coveralls.io.
   Special thanks to @spenceralger for the pull request. (resolved #25)
 * Updating all dependencies to latest versions and shrinkwrapping using `npm shrinkwrap`
+
+### 0.2.1 (Feb 5, 2014)
+
+* Updated coffeescript dependency for mocha tests to use 1.7.x where you now must explicitly register the compiler
+* Fixed typos
