@@ -6,6 +6,8 @@
 
 'use strict';
 
+var optimist = require('optimist');
+var defaults = require('lodash.defaults');
 var mocha = require('../lib/mocha');
 
 
@@ -27,7 +29,8 @@ function MochaCov(grunt) {
     'mochacov',
     'Run Mocha server-side tests in Grunt with code coverage support and optional integration to coveralls.io.',
     function () {
-      var options = this.options();
+      var argv = optimist.parse(grunt.option.flags());
+      var options = defaults(argv, this.options());
       var globs = [];
 
       // Use the Grunt files format if the `files` option isn't set
