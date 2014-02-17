@@ -4,7 +4,10 @@ var grunt = require('grunt'),
     path = require('path'),
     fs = require('fs'),
     chai = require('chai'),
-    should = chai.should();
+    should = chai.should(),
+    temp = require('temp');
+
+temp.track();
 
 describe('Integration Tests', function () {
 
@@ -43,14 +46,18 @@ describe('Integration Tests', function () {
   });
 
   it('should test grunt file glob', function (done) {
-
+    var fd_out = temp.openSync('grunt-mocha-cov-test');
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/glob-gruntfile.js']
+      args: ['--gruntfile', __dirname + '/fixture/glob-gruntfile.js'],
+      opts: {
+        stdio: ['ignore', fd_out.fd, 'ignore'],
+      },
     }, function (error, output, code) {
       should.not.exist(error);
       code.should.equals(0);
-      output.stdout.should.include('2 passing');
+      fs.closeSync(fd_out.fd);
+      fs.readFileSync(fd_out.path, 'utf8').should.include('2 passing');
       done();
     });
   });
@@ -68,14 +75,19 @@ describe('Integration Tests', function () {
   });
 
   it('should test grunt coverage', function (done) {
+    var fd_out = temp.openSync('grunt-mocha-cov-test');
 
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile.js']
+      args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile.js'],
+      opts: {
+        stdio: ['ignore', fd_out.fd, 'ignore'],
+      },
     }, function (error, output, code) {
       should.not.exist(error);
       code.should.equals(0);
-      output.stdout.should.include('"coverage": 100');
+      fs.closeSync(fd_out.fd);
+      fs.readFileSync(fd_out.path, 'utf8').toString().should.include('"coverage": 100');
       done();
     });
   });

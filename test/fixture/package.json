@@ -1,5 +1,5 @@
 {
-  "scripts": {
+  "config": {
     "blanket": {
       "pattern": [
         "test/fixture/pass"

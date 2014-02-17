@@ -39,7 +39,8 @@
     "mocha-lcov-reporter": "*",
     "mkdirp": "*",
     "coveralls": "*",
-    "lodash.defaults": "*"
+    "lodash.defaults": "*",
+    "temp": "*"
   },
   "peerDependencies": {
     "grunt": "*"
