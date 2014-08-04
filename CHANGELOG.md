@@ -50,3 +50,11 @@
 
 * Updated coffeescript dependency for mocha tests to use 1.7.x where you now must explicitly register the compiler
 * Fixed typos
+
+### 0.3.0 (Aug 4, 2014)
+
+* Updating all dependencies, this includes:
+  * mocha 1.21.3
+  * blanket 1.1.6
+  * coveralls 2.11.1
+* Support for latest mocha options, including Harmony mode (Thanks @jan-molak)
