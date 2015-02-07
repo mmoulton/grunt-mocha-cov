@@ -1,5 +1,3 @@
-/*jshint -W068 */
-
 'use strict';
 
 var mocha = require('../lib/mocha'),
@@ -12,7 +10,7 @@ describe('Unit Tests', function () {
 
   it('should pass a sanity chack', function (done) {
     mocha({
-      files: [__dirname + '/fixture/pass.js'],
+      files: [path.join(__dirname, '/fixture/pass.js')],
       quiet: true
     }, function (error, output) {
       should.not.exist(error);
@@ -23,7 +21,7 @@ describe('Unit Tests', function () {
 
   it('should test when mocha passes', function (done) {
     mocha({
-      files: [__dirname + '/fixture/pass.js'],
+      files: [path.join(__dirname, '/fixture/pass.js')],
       quiet: true
     }, function (error) {
       should.not.exist(error);
@@ -33,7 +31,7 @@ describe('Unit Tests', function () {
 
   it('should test when mocha fails', function (done) {
     mocha({
-      files: [__dirname + '/fixture/fail.js'],
+      files: [path.join(__dirname, '/fixture/fail.js')],
       quiet: true
     }, function (error) {
       should.exist(error);
@@ -43,7 +41,7 @@ describe('Unit Tests', function () {
 
   it('should test setting string options', function (done) {
     mocha({
-      files: [__dirname + '/fixture/pass.js'],
+      files: [path.join(__dirname, '/fixture/pass.js')],
       quiet: true,
       reporter: 'json'
     }, function (error, output) {
@@ -58,7 +56,7 @@ describe('Unit Tests', function () {
   it('should test setting boolean options', function (done) {
 
     mocha({
-      files: [__dirname + '/fixture/fail.js'],
+      files: [path.join(__dirname, '/fixture/fail.js')],
       quiet: true,
       reporter: 'json',
       bail: true
@@ -73,7 +71,7 @@ describe('Unit Tests', function () {
   it('should test setting array options', function (done) {
 
     mocha({
-      files: [__dirname + '/fixture/coffeescript.coffee'],
+      files: [path.join(__dirname, '/fixture/coffeescript.coffee')],
       quiet: true,
       reporter: 'json',
       compilers: ['coffee:coffee-script/register']
@@ -86,7 +84,7 @@ describe('Unit Tests', function () {
   it('should test requiring modules', function (done) {
 
     mocha({
-      files: [__dirname + '/fixture/require.js'],
+      files: [path.join(__dirname, '/fixture/require.js')],
       quiet: true,
       reporter: 'json',
       require: ['should']
@@ -101,7 +99,7 @@ describe('Unit Tests', function () {
   it('should test file globbing', function (done) {
 
     mocha({
-      files: [__dirname + '/fixture/pass*.js'],
+      files: [path.join(__dirname, '/fixture/pass*.js')],
       quiet: true,
       reporter: 'json'
     }, function (error, output) {
@@ -115,7 +113,7 @@ describe('Unit Tests', function () {
   it('should test coverage', function (done) {
 
     mocha({
-      files: [__dirname + '/fixture/pass.js'],
+      files: [path.join(__dirname, '/fixture/pass.js')],
       quiet: true,
       reporter: 'json-cov',
       coverage: true
@@ -129,7 +127,7 @@ describe('Unit Tests', function () {
   it('should test coverage output', function (done) {
 
     mocha({
-      files: [__dirname + '/fixture/pass.js'],
+      files: [path.join(__dirname, '/fixture/pass.js')],
       quiet: true,
       reporter: 'json-cov',
       output: 'test/out.json'
@@ -146,7 +144,7 @@ describe('Unit Tests', function () {
   it('should test coverage output when directory does not exist', function (done) {
 
     mocha({
-      files: [__dirname + '/fixture/pass.js'],
+      files: [path.join(__dirname, '/fixture/pass.js')],
       quiet: true,
       reporter: 'json-cov',
       output: 'test/new/out.json'
@@ -164,7 +162,7 @@ describe('Unit Tests', function () {
 
   it('should test coveralls integration', function (done) {
     mocha({
-      files: [__dirname + '/fixture/pass.js'],
+      files: [path.join(__dirname, '/fixture/pass.js')],
       coveralls: {
         repoToken: 'bad-token',
         serviceName: 'bad-name',
@@ -201,7 +199,7 @@ describe('Unit Tests', function () {
   //   var origTravisVal = process.env.TRAVIS;
   //   delete process.env.TRAVIS;
   //   mocha({
-  //     files: [__dirname + '/fixture/pass.js'],
+  //     files: [path.join(__dirname, '/fixture/pass.js')],
   //     coveralls: {
   //       repoToken: null,
   //       serviceName: null,

@@ -7,10 +7,9 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc'
       },
       all: [
-        '.jshintrc',
-        'package.json',
-        '**/*.js',
-        '!node_modules/**/*'
+        'lib/*.js',
+        'tasks/*.js',
+        'tests/*.js'
       ]
     },
 
