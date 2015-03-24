@@ -7,3 +7,5 @@ script: 'grunt travis'
 
 matrix:
   fast_finish: true
+
+sudo: false
