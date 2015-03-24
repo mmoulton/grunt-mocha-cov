@@ -33,7 +33,7 @@
 
 * Updating all dependencies, this includes:
   * mocha 0.14.x
-  * blanket 1.1.5
+  * blanket 1.1.6
 * Changed search location for `mocha` (resolved #17)
 
 ### 0.1.1 (Dec 6, 2013)
@@ -58,3 +58,13 @@
   * blanket 1.1.6
   * coveralls 2.11.1
 * Support for latest mocha options, including Harmony mode (Thanks @jan-molak)
+
+### 0.4.0 (Mar 24, 2015)
+
+* Node 0.12.x / io 1.x support
+* Updating dependencies
+  * mocha 2.2.1
+  * coveralls 2.11.2
+* Fix #38
+
+** Thanks to @xhmikosr for the PR that made this possible
