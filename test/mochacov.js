@@ -12,7 +12,7 @@ describe('Integration Tests', function () {
 
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/pass-gruntfile.js']
+      args: ['--gruntfile', path.join(__dirname, '/fixture/pass-gruntfile.js')]
     }, function (error, output, code) {
       should.not.exist(error);
       code.should.equals(0);
@@ -24,7 +24,7 @@ describe('Integration Tests', function () {
 
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/fail-gruntfile.js']
+      args: ['--gruntfile', path.join(__dirname, '/fixture/fail-gruntfile.js')]
     }, function (error, output, code) {
       code.should.not.equals(0);
       done();
@@ -35,7 +35,7 @@ describe('Integration Tests', function () {
 
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/fail-gruntfile2.js']
+      args: ['--gruntfile', path.join(__dirname, '/fixture/fail-gruntfile2.js')]
     }, function (error, output, code) {
       code.should.not.equals(0);
       done();
@@ -46,7 +46,7 @@ describe('Integration Tests', function () {
 
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/glob-gruntfile.js']
+      args: ['--gruntfile', path.join(__dirname, '/fixture/glob-gruntfile.js')]
     }, function (error, output, code) {
       should.not.exist(error);
       code.should.equals(0);
@@ -59,7 +59,7 @@ describe('Integration Tests', function () {
 
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/options-gruntfile.js']
+      args: ['--gruntfile', path.join(__dirname, '/fixture/options-gruntfile.js')]
     }, function (error, output, code) {
       should.not.exist(error);
       code.should.equals(0);
@@ -71,7 +71,7 @@ describe('Integration Tests', function () {
 
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile.js']
+      args: ['--gruntfile', path.join(__dirname, '/fixture/coverage-gruntfile.js')]
     }, function (error, output, code) {
       should.not.exist(error);
       code.should.equals(0);
@@ -84,7 +84,7 @@ describe('Integration Tests', function () {
 
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile-out.js']
+      args: ['--gruntfile', path.join(__dirname, '/fixture/coverage-gruntfile-out.js')]
     }, function (error, output, code) {
       should.not.exist(error);
       code.should.equals(0);
@@ -101,7 +101,7 @@ describe('Integration Tests', function () {
 
     grunt.util.spawn({
       cmd: 'grunt',
-      args: ['--gruntfile', __dirname + '/fixture/coverage-gruntfile-coveralls.js']
+      args: ['--gruntfile', path.join(__dirname, '/fixture/coverage-gruntfile-coveralls.js')]
     }, function (error, output, code) {
 //      console.log(error.stack);
       should.exist(error);
