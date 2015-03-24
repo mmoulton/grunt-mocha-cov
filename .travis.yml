@@ -1,4 +1,11 @@
 language: node_js
 node_js:
   - '0.10'
-script: './node_modules/.bin/grunt travis'
+  - '0.12'
+
+script: 'grunt test'
+
+matrix:
+  fast_finish: true
+
+sudo: false
