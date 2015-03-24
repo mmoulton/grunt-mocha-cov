@@ -3,7 +3,7 @@ node_js:
   - '0.10'
   - '0.12'
 
-script: 'grunt travis'
+script: 'grunt test'
 
 matrix:
   fast_finish: true
