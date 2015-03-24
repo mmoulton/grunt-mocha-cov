@@ -4,7 +4,7 @@
   "dependencies": {
     "blanket": {
       "version": "1.1.6",
-      "from": "blanket@*",
+      "from": "blanket@1.1.6",
       "resolved": "https://registry.npmjs.org/blanket/-/blanket-1.1.6.tgz",
       "dependencies": {
         "esprima": {
@@ -33,7 +33,7 @@
     },
     "coveralls": {
       "version": "2.11.2",
-      "from": "coveralls@*",
+      "from": "coveralls@2.11.2",
       "resolved": "https://registry.npmjs.org/coveralls/-/coveralls-2.11.2.tgz",
       "dependencies": {
         "js-yaml": {
@@ -221,12 +221,12 @@
     },
     "lcov-parse": {
       "version": "0.0.9",
-      "from": "lcov-parse@*",
+      "from": "lcov-parse@0.0.9",
       "resolved": "https://registry.npmjs.org/lcov-parse/-/lcov-parse-0.0.9.tgz"
     },
     "lodash.defaults": {
       "version": "3.0.0",
-      "from": "lodash.defaults@*",
+      "from": "lodash.defaults@3.0.0",
       "resolved": "https://registry.npmjs.org/lodash.defaults/-/lodash.defaults-3.0.0.tgz",
       "dependencies": {
         "lodash._arraycopy": {
@@ -296,7 +296,7 @@
     },
     "mkdirp": {
       "version": "0.5.0",
-      "from": "mkdirp@*",
+      "from": "mkdirp@0.5.0",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.0.tgz",
       "dependencies": {
         "minimist": {
@@ -308,7 +308,7 @@
     },
     "mocha": {
       "version": "2.2.1",
-      "from": "mocha@*",
+      "from": "mocha@2.2.1",
       "resolved": "https://registry.npmjs.org/mocha/-/mocha-2.2.1.tgz",
       "dependencies": {
         "commander": {
@@ -403,12 +403,12 @@
     },
     "mocha-lcov-reporter": {
       "version": "0.0.2",
-      "from": "mocha-lcov-reporter@*",
+      "from": "mocha-lcov-reporter@0.0.2",
       "resolved": "https://registry.npmjs.org/mocha-lcov-reporter/-/mocha-lcov-reporter-0.0.2.tgz"
     },
     "request": {
       "version": "2.53.0",
-      "from": "request@*",
+      "from": "request@2.53.0",
       "resolved": "https://registry.npmjs.org/request/-/request-2.53.0.tgz",
       "dependencies": {
         "bl": {
@@ -544,9 +544,9 @@
           "resolved": "https://registry.npmjs.org/hawk/-/hawk-2.3.1.tgz",
           "dependencies": {
             "hoek": {
-              "version": "2.11.1",
+              "version": "2.12.0",
               "from": "hoek@>=2.0.0 <3.0.0",
-              "resolved": "https://registry.npmjs.org/hoek/-/hoek-2.11.1.tgz"
+              "resolved": "https://registry.npmjs.org/hoek/-/hoek-2.12.0.tgz"
             },
             "boom": {
               "version": "2.6.1",
