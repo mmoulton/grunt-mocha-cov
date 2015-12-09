@@ -1,7 +1,7 @@
 # Grunt Mocha Test Coverage
 [![Build Status][travis-image]][travis] [![Coverage Status][coveralls-image]][coveralls] [![Dependency Status][david-image]][david] [![devDependency Status][david-dev-image]][david-dev]
 
-**NOTE:** This project is no longer being maintained by me. If you are interested in taking over maintnance of this project, let me know.
+**NOTE:** This project is no longer being maintained by me. If you are interested in taking over maintenance of this project, let me know.
 
 Use [Grunt][] to execute server-side [Mocha][] tests with optional code coverage using [Blanket][]. You can also use this to send coverage data to [Coveralls][].
 
