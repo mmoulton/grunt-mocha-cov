@@ -20,6 +20,7 @@
     "type": "git",
     "url": "https://github.com/mmoulton/grunt-mocha-cov.git"
   },
+  "license": "MIT",
   "licenses": [
     {
       "type": "MIT",
