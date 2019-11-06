@@ -40,7 +40,7 @@
     "mkdirp": "0.5.0",
     "mocha": "2.2.1",
     "mocha-lcov-reporter": "0.0.2",
-    "request": "2.53.0"
+    "request": "2.68.0"
   },
   "devDependencies": {
     "chai": "2.1.2",
